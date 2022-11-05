@@ -1,0 +1,88 @@
+{% extends 'pages/dashEMP.html' %}
+{% block content %}
+{%load static%}
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Validation Vehicule</title>
+<style media="screen">
+  a:link {
+    text-decoration: none;
+  }
+
+  h6 {
+    text-align: center;
+  }
+
+  .row {
+    margin: 100px;
+  }
+
+     label #sidebar_btn {
+    z-index: 1;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    cursor: pointer;
+    left: 300px;
+    padding-left: 60px;
+    margin-top:15px;
+    font-size: 20px;
+    
+    transition: 0.5s;
+    transition-property: color;
+  }
+  body
+    {
+    background:rgb(0, 0, 0); 
+    cursor: pointer;
+    background-color: transparent;
+    background-image:url({% static 'images/frr.jpg' %}) ;
+  }
+        
+</style>
+</head>
+<br><br>
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h6 class="panel-title"  style="color:rgb(255, 255, 255);font-size:18px;font-weight:bold" >Validation Vehicule</h6>
+  </div>
+  <table class="table table-hover" id="dev-table">
+    <thead>
+      <tr>
+        <th  style="color:rgb(0, 0, 0);font-size:18px;font-weight:bold">Marque</th>
+        <th  style="color:rgb(0, 0, 0);font-size:18px;font-weight:bold"> Modele</th>
+        <th  style="color:rgb(0, 0, 0);font-size:18px;font-weight:bold"> Color</th>
+        <th  style="color:rgb(0, 0, 0);font-size:18px;font-weight:bold"> Status</th>
+        
+      </tr>
+    </thead>
+    {% for t in vehicules %}
+    <tr>
+      <td> {{t.marque}}</td>
+      <td>{{t.modele}}</td>
+      <td>{{t.couleur}}</td>
+      <td>{{t.Status}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</div>
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+		
+		
+{% endblock content %}
+

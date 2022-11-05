@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+ 
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    body {
+      background:rgb(0, 0, 0); 
+    cursor: pointer;
+    background-color: transparent;
+    background-image:url({% static 'images/frr.jpg' %}) ;
+    }
+
+    header {
+      position: fixed;
+      background: #000000;
+      padding: 20px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .left_area h3 {
+      color: rgb(233, 27, 27);
+      margin: 0px;
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .left_area span {
+      color: #d31919;
+    }
+
+    .logout_btn {
+      padding: 15px;
+      background: #000000;
+      text-decoration: none;
+      float: right;
+      margin-top: -20px;
+      margin-right: 30px;
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(233, 16, 16);
+      transition: 0.5s;
+
+    }
+
+    .logout_btn:hover {
+      background: #272626;
+    }
+
+    .sidebar {
+      background: rgb(0, 0, 0);
+      margin-top: 70px;
+      padding-top: 30px;
+      position: fixed;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      transition: 0.5s;
+      transition-property: left;
+    }
+
+    .sidebar .profile_image {
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar h4 {
+      color: rgb(255, 255, 255);
+      margin-top: 0;
+      
+    }
+
+    .sidebar a {
+      color: rgb(241, 14, 14);
+      display: block;
+      width: 100%;
+      line-height: 60px;
+      text-decoration: none;
+      padding-left: 40px;
+      box-sizing: border-box;
+      transition: 0.5s;
+
+    }
+
+    .sidebar a:hover {
+      background: #3b3939;
+    }
+
+    .sidebar i {
+      padding-right: 10px;
+    }
+
+    label #sidebar_btn {
+      z-index: 1;
+      color: rgb(216, 24, 24);
+      position: fixed;
+      cursor: pointer;
+      left: 300px;
+      font-size: 20px;
+      margin: 5px 0;
+      transition: 0.5s;
+      transition-property: color;
+    }
+
+    label #sidebar_btn:hover {
+      color: #474343;
+    }
+
+    #check:checked~.sidebar {
+      left: -190px;
+    }
+
+    #check:checked~.sidebar a span {
+      display: none;
+    }
+
+    #check:checked~.sidebar a {
+      font-size: 20px;
+      margin-left: 170px;
+      width: 80px;
+    }
+
+    .content {
+      margin-left: 250px;
+      background: url(back.jpg) no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      transition: 0.5s;
+    }
+
+    #check:checked~.content {
+      margin-left: 60px;
+    }
+
+    #check {
+      display: none;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+</head>
+
+<body>
+
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header style="padding-top: 0px;">
+    <label for="check">
+      <i style="padding-left: 60px;margin-top: 17px;" class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <h3 style="color:rgb(160, 31, 14);  font-size:40px;font-weight:bold;text-shadow:4px 4px 4px rgb(167, 130, 130)" >DIGI PARK</h3>
+    </div>
+    <div class="right_area">
+      <a href="/" class="logout_btn"  style="text-shadow:3px 3px 3px rgb(211, 77, 77)"  >LOGOUT</a>
+    </div>
+  </header>
+  <!--header area end-->
+  <!--sidebar start-->
+  <div class="sidebar" style="margin-top:60px;">
+    <center>
+
+      <h4>{{request.user.first_name}}</h4>
+      <h6 style="color: rgb(194, 162, 162); font-size:13px; text-shadow:3px 3px 3px rgb(240, 10, 10)"> Employee </h6>
+
+    </center>
+
+    <a href="dashboard.html"><i class="fas fa-edit"></i><span>Mission Statements</span></a>
+    <a href="apply-vehicule.html"><i class="fas fa-car"></i><span>Request Vehicle</span></a>
+    <a href="history.html"><i class="fas fa-check-circle"></i><span>Validation Vehicule</span></a>
+    <a href="ServiceRepar.html"><i class="fas fa-cogs"></i><span>Service Reparation </span></a>
+
+    <a href="ask-question.html"><i class="fas fa-question-circle"></i><span>Ask Question</span></a>
+    <a href="question-history.html"><i class="fas fa-bullhorn"></i><span>FAQ</span></a>
+  </div>
+  <!--sidebar end-->
+  
+  
+
+  <!--content start-->
+  <div class="content">
+    <br><br><br><br><br>
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <br><br><br>
+  
+  </div>
+  <!--content end-->
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Google map-->
+<div id="map-container-google-3" class="z-depth-1-half map-container-3">
+  <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+
+<!--Google Maps-->
+<style>
+.map-container-3{
+  overflow:hidden;
+  padding-bottom:50.25%;
+  position:relative;
+  height:0;
+}
+.map-container-3 iframe{
+  left:250px;
+  top:110px;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+</style>

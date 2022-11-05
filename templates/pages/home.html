@@ -1,0 +1,201 @@
+{% load static %}
+<html>
+<head>
+    <title>DIGI Park</title>
+    <style>
+        a{
+            color:white;
+            background-color:rgb(158, 34, 34);
+            padding:5px 15px 5px 15px;
+            text-decoration:none;
+            border-radius:5px;
+            display: block;
+            width: 120px;
+        }
+        body
+        {
+            background-image:url({% static 'images/back.jpg' %}) ;
+        }
+
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+
+            position: relative;
+            margin: auto;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #000000;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {font-size: 11px}
+        }
+    </style>
+</head>
+<body>
+<table border="0" width="100%" height="10%"  style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;border-bottom:1px dotted rgb(0, 0, 0);box-shadow:2px 2px 10px rgb(255, 0, 0);">
+    <tr>
+
+        <td style="color:rgb(160, 31, 14);font-size:50px;font-weight:bold;text-shadow:4px 4px 4px white">DIGI PARK</td>
+        <td width="10%" align="center" style="color:rgb(160, 31, 14); font-weight:bold;text-shadow:1px 1px 1px white"> <a href="about">About Us</a></td>
+        <td width="10%" align="center" style="color:rgb(160, 31, 14); font-weight:bold;text-shadow:1px 1px 1px white"> <a href="contact">ContactUs</a></td>
+        <td width="10%" align="center" style="color:rgb(160, 31, 14); font-weight:bold;text-shadow:1px 1px 1px white"> <a href="login.html">Employee</a></td>
+        <td width="10%" align="center" style="color:rgb(160, 31, 14); font-weight:bold;text-shadow:1px 1px 1px white"> <a href="admin">Admin</a></td>
+
+    </tr>
+</table><br><br><br><br><br><br><br>
+
+<table border="0" style="box-shadow:2px 2px 10px rgb(212, 18, 18)" width="70%" height="70%" align="center">
+    <tr>
+        <td align="center" valign="top">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="{% static 'images/fbn1.webp' %}" style="width:1100px" height="500px">
+                    <div class="text"><strong  style="color:rgb(160, 31, 14);font-size:30px;font-weight:bold;text-shadow:3px 3px 3px rgb(112, 108, 108)" ><i>PARKING</i></strong></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="{% static 'images/fbn2.jpg' %}" style="width:1100px" height="500px">
+                    <div class="text"><strong  style="color:rgb(160, 31, 14);font-size:30px;font-weight:bold;text-shadow:3px 3px 3px rgb(58, 55, 55)" ><i>TRANSPORTATION</i></strong></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="{% static 'images/fbn3.jpg' %}" style="width:1100px" height="500px">
+                    <div class="text"><strong  style="color:rgb(160, 31, 14);font-size:30px;font-weight:bold;text-shadow:3px 3px 3px rgb(63, 59, 59)" ><i>REPARATION</i></strong></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="{% static 'images/fbn4.jpg' %}" style="width:1100px" height="500px">
+                    <div class="text"><strong  style="color:rgb(160, 31, 14);font-size:30px;font-weight:bold;text-shadow:3px 3px 3px rgb(56, 53, 53)" ><i>RESERVATION</i></strong></div>
+                </div>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </td>
+    </tr>
+    <tr style="background-color:rgb(153, 31, 27);color:white;height:25px">
+        <td><marquee behavior="alternate"><strong  style="color:rgb(255, 255, 255);font-size:23px;font-weight:bold;text-shadow:3px 3px 3px rgb(219, 24, 24)"><i>
+            Welcome to DIGI PARK
+
+        </i></strong>
+           
+        </marquee></td>
+    </tr>
+</table>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); 
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
